@@ -38,13 +38,8 @@ public class OfferServiceImpl implements OfferService {
 	public OfferDTO updateOffer(OfferDTO offerDTO, Integer offerId) {
 		Offer offer = offerRepo.findById(offerId)
 				.orElseThrow(() -> new ResourceNotFoundException("Offer", "Id", offerId));
-<<<<<<< HEAD
-		OfferDTO updatedOfferDto = mapper.map(offer, OfferDTO.class);
-		return updatedOfferDto;
-=======
 			mapper.map(offerDto, offer);
 			return offerDto;
->>>>>>> 59fbfa4ea447ca4f61a5a725a90c341440bc5ef7
 	}
 
 	@Override
